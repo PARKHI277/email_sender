@@ -15,25 +15,23 @@ app.get("/sendemail", async (req, res) => {
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: "csichapters@gmail.com",
+          user: process.env.email,
           pass: process.env.pass,
         },
       });
 
       const mailOptions = {
-        from: "csichapters@gmail.com",
+        from: process.env.email,
         to: emai,
-        subject: "Registered for CINE'22",
+        subject: "CSI Trainees CINE'22",
 
         html:
-          "<p>Team CSI congratulates you for being successfully registered for CINE'22. Brace yourself, fasten your seatbelts, polish your skills, and be ready for the most exciting recruitment drive.</p>" +
-          "<h4>Mode: Offline</h4>" +
-          "<h4>Date: 19 Sept 2022</h4>" +
-          "<h4>Time: 4pm-6pm</h4>" +
-          "<h4>Venue: Basic IT Lab( CSIT Block)</h4>" +
-          "<h4>Stay Tuned to our Instagram page for further information.</h4>" +
-          "<h4>https://www.instagram.com/csi_akgec/</h4>" +
-          "<h4>Regards,</h4>" +
+          "<h4><b>Congratulations!</b></h4>" +
+          "<h4>Welcome to Team CSI</h4>" +
+          "<h4>We are pleased to inform you that out of 200+ active participants you are selected as a part of Team CSI Trainee.</h4>" +
+          "<h4>To gear up your journey with us please join the below WhatsApp group. " +
+          "<h4>We expect you to be present on 27th September at 4 PM, Basic IT Lab, (CSIT block, 3rd floor) for the very first introductory meeting with us.</h4>" +
+          "<h4>With regards,</h4>" +
           "<h4>Team CSI</h4>",
       };
 
