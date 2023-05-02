@@ -15,6 +15,7 @@
     "fs": "0.0.1-security",
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.20",
+    "path": "^0.12.7",
     "promise": "^8.2.0",
     "util": "^0.12.4",
     "utill": "^0.1.3"

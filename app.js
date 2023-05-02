@@ -23,16 +23,23 @@ app.get("/sendemail", async (req, res) => {
       const mailOptions = {
         from: process.env.email,
         to: emai,
-        subject: "CSI Trainees CINE'22",
+        subject: "CodeShell 3.0 Prize Distribution",
 
         html:
-          "<h4><b>Congratulations!</b></h4>" +
-          "<h4>Welcome to Team CSI</h4>" +
-          "<h4>We are pleased to inform you that out of 200+ active participants you are selected as a part of Team CSI Trainee.</h4>" +
-          "<h4>To gear up your journey with us please join the below WhatsApp group. " +
-          "<h4>We expect you to be present on 27th September at 4 PM, Basic IT Lab, (CSIT block, 3rd floor) for the very first introductory meeting with us.</h4>" +
-          "<h4>With regards,</h4>" +
-          "<h4>Team CSI</h4>",
+          // `<img src="cid:unique@kreata.ee"/>`+
+          // "<h4>Dear Team Leader,</h4>" +
+          "<h4>We are thrilled to inform you that prize distribution ceremony of CODESHELL 3.0 winners will be held on 2nd May 2023 , at 10:10A.M.  Basic IT Lab, 3rd floor CS/IT block.</h4>" +
+          "<h4>Congratulations once again, and we look forward to celebrating your success with you!.</h4> " +
+          // "<h4>Once again, congratulations on your success, and we look forward to seeing your team excel in the upcoming rounds of the Code-a-thon.</h4>" +
+          "<h4>Best regards,</h4>" +
+          "<h4>Team CSI</h4>",
+        // attachments: [
+        //   {
+        //     filname: "Congrats.png",
+        //     path: "./congrats.png",
+        //     cid: "unique@kreata.ee",
+        //   },
+        // ],
       };
 
       transporter.sendMail(mailOptions, function (error, info) {
